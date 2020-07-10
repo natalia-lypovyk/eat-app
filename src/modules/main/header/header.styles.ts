@@ -6,7 +6,7 @@ const Container = styled(Flex)`
   height: 100vh;
   width: 100%;
   margin-top: -66px;
-  background: url('/images/Optimized-photo-1543393287-9f0212fd245a.jpg') fixed center;
+  background: url('public/images/Optimized-photo-1543393287-9f0212fd245a.jpg') fixed center;
   background-size: cover;  
 `;
 
