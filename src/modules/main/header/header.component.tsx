@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { css } from 'styled-components';
-import Flex from'ustudio-ui/components/Flex';
 import Text from 'ustudio-ui/components/Text';
 
 import { OrderButton } from '../../../shared/components/order-button';
@@ -11,10 +10,7 @@ export const Header: FC = () => {
   return (
     <Styled.Container>
       <Styled.Content direction='column'>
-        <Styled.Nav>
-          <Styled.Title>Dine</Styled.Title>
-          <Nav />
-        </Styled.Nav>
+
 
         <Styled.Heading>
           Exquisite dining<br/> since 1989

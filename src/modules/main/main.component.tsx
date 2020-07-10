@@ -7,7 +7,7 @@ import { Order } from './order';
 import { Reservation } from './reservation';
 import { Footer } from './footer';
 
-export const Main: FC = () => {
+const Main: FC = () => {
   return (
     <>
       <Header />
@@ -19,3 +19,5 @@ export const Main: FC = () => {
     </>
   )
 };
+
+export default Main;

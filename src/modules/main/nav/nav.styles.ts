@@ -39,6 +39,22 @@ const ListItem = styled.li`
   margin-left: 20px;
 `;
 
-const Styled = { List, ListItem, Link };
+const Nav = styled.div`
+  max-width: 1300px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+`;
+
+const Title = styled(Text)`
+  font-size: 3em;
+  font-weight: bold;  
+  color: var(--c-light);
+`;
+
+const Styled = { List, ListItem, Link, Nav, Title };
 
 export default Styled;

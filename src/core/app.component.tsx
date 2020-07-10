@@ -1,17 +1,18 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { FC, Suspense } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { routes } from './app.routing';
 
-import { Main } from '../modules/main';
-import { Menu } from '../modules/menu';
-import { ReservationPage } from '../modules/reservation-page';
+import { Nav } from '../modules/main/nav';
 
-export const App = () => {
+export const App: FC = () => {
   return (
-    <Switch>
-      <Route path='/' exact component={Main} />
-      <Route path='/menu' exact component={Menu} />
-      <Route path='/reservation' exact component={ReservationPage} />
-      {/*<Route path='/order' exact component={OrderPage} />*/}
-    </Switch>
+    <Suspense fallback={<div />}>
+      <Nav />
+      <Switch>
+        {routes.map((route) => (
+          <Route {...route} key={route.path as string} />
+        ))}
+      </Switch>
+    </Suspense>
   );
 };

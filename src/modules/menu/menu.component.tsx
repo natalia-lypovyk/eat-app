@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
 
-export const Menu: FC = () => {
+const Menu: FC = () => {
   return (
     <h2>Menu</h2>
   )
 };
+
+export default  Menu;

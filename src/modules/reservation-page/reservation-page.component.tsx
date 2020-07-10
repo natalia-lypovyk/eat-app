@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, {FC, useState} from 'react';
 import { useForm } from 'react-hook-form';
 import Text from 'ustudio-ui/components/Text';
 import DatePicker from 'react-datepicker';
@@ -8,15 +8,19 @@ import { OrderButtonFilled } from '../../shared/components/order-button-filled';
 
 import Styled from './reservation-page.styles';
 
-export const ReservationPage: FC = () => {
+const ReservationPage: FC = () => {
+  const [orders, setOrder] = useState([]);
   const [startDate, setStartDate] = useState<Date | null>(new Date());
-  const { handleSubmit, register } = useForm();
+  const { handleSubmit, register, reset } = useForm();
 
   const onSubmit = (data: any) => {
     console.log(data);
     const order = { ...data };
+    setOrder(order);
 
-    localStorage.setItem('order', JSON.stringify(order));
+    localStorage.setItem('orders', JSON.stringify(orders));
+
+    reset();
   }
 
   return (
@@ -90,3 +94,5 @@ export const ReservationPage: FC = () => {
 
   )
 };
+
+export default ReservationPage;
