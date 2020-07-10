@@ -1,0 +1,2 @@
+(this["webpackJsonpeat-app"]=this["webpackJsonpeat-app"]||[]).push([[7],{186:function(a,n,t){"use strict";t.r(n);var e=t(0),o=t.n(e),r=t(15),s=t.n(r);n.default=function(){return o.a.createElement(s.a,{variant:"h2"},"Now you can order dishes from our menu sitting on yuor sofa ")}}}]);
+//# sourceMappingURL=7.d4f5332b.chunk.js.map

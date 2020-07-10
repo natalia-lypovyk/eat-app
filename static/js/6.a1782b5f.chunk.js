@@ -1,0 +1,2 @@
+(this["webpackJsonpeat-app"]=this["webpackJsonpeat-app"]||[]).push([[6],{187:function(e,t,n){"use strict";n.r(t);var a=n(0),p=n.n(a);t.default=function(){return p.a.createElement("h2",null,"Menu")}}}]);
+//# sourceMappingURL=6.a1782b5f.chunk.js.map

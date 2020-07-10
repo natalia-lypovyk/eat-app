@@ -1,0 +1,1 @@
+{"version":3,"sources":["modules/menu/menu.component.tsx"],"names":["Menu"],"mappings":"0GAAA,2BAQgBA,UANC,WACf,OACE","file":"static/js/6.a1782b5f.chunk.js","sourcesContent":["import React, { FC } from 'react';\n\nconst Menu: FC = () => {\n  return (\n    <h2>Menu</h2>\n  )\n};\n\nexport default  Menu;\n"],"sourceRoot":""}
