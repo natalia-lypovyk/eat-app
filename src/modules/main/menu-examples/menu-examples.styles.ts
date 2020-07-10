@@ -3,8 +3,9 @@ import Flex from 'ustudio-ui/components/Flex';
 import Text from 'ustudio-ui/components/Text';
 
 const Wrapper = styled(Flex)`
-  background: #000;
   width: 100%;
+  
+  background: #000;  
 `;
 
 const Container = styled(Flex)`

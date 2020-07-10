@@ -1,18 +1,23 @@
 import React, { FC } from 'react';
 import { css } from 'styled-components';
+import Flex from'ustudio-ui/components/Flex';
 import Text from 'ustudio-ui/components/Text';
 
 import { OrderButton } from '../../../shared/components/order-button';
-
+import { Nav } from '../nav';
 import Styled from './header.styles';
 
 export const Header: FC = () => {
   return (
     <Styled.Container>
       <Styled.Content direction='column'>
-        <Styled.Title>Dine</Styled.Title>
+        <Styled.Nav>
+          <Styled.Title>Dine</Styled.Title>
+          <Nav />
+        </Styled.Nav>
+
         <Styled.Heading>
-          Exquisite dining since 1989
+          Exquisite dining<br/> since 1989
         </Styled.Heading>
         <Text styled={{
           Text: css`
@@ -20,7 +25,7 @@ export const Header: FC = () => {
             margin-bottom: 50px;
           `,
         }}>
-          Experience our seasonal menu in beautiful country surroundings.
+          Experience our seasonal menu in beautiful country surroundings.<br/>
           Eat the freshest produce from the comfort of our farmhouse.
         </Text>
         <OrderButton />

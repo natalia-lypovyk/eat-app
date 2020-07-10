@@ -2,6 +2,6 @@ import React, { FC } from 'react';
 
 export const Menu: FC = () => {
   return (
-    <h2>order here</h2>
+    <h2>Menu</h2>
   )
 };

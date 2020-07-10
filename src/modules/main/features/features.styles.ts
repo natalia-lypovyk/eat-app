@@ -17,17 +17,19 @@ const Heading = styled(Text)`
 `;
 
 const ImageContainer1 = styled.div`
-  background: url('/images/pexels-photo-1673876.jpeg') no-repeat;
-  background-size: contain;
   width: 400px;
   height: 700px;
+  
+  background: url('/images/pexels-photo-1673876.jpeg') no-repeat;
+  background-size: contain;  
 `;
 
 const ImageContainer2 = styled.div`
-  background: url('/images/cooking.jpeg') no-repeat;
-  background-size: contain;
   width: 400px;
   height: 700px;
+  
+  background: url('/images/cooking.jpeg') no-repeat;
+  background-size: contain;  
 `;
 
 const Styled = { Container, Heading, ImageContainer1, ImageContainer2 };

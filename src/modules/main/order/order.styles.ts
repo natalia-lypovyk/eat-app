@@ -29,6 +29,7 @@ const Content = styled(Flex)`
 
 const Option = styled(Text)`
   margin: 10px 0;
+  
   color: #a2a2a2;
   text-transform: uppercase;  
 `;
