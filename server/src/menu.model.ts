@@ -10,4 +10,7 @@ export class Menu {
 
   @Column()
   public description: string;
+
+  @Column()
+  public price: string;
 }

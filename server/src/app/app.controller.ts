@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get } from '@nestjs/common';
 
 import { Menu } from '../menu.model';
 import { MenuService } from '../menu/menu.service';
@@ -10,5 +10,10 @@ export class AppController {
   @Post('/menu')
   public async addMenu(@Body() menu: Menu) {
     await this.menuService.addMenu(menu);
+  }
+
+  @Get('/menu')
+  public async getMenu() {
+    return this.menuService.getMenu();
   }
 }

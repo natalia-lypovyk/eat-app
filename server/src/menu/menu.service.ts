@@ -14,4 +14,8 @@ export class MenuService {
   public async addMenu(menu: Menu) {
     await this.menuRepo.save(menu);
   }
+
+  public async getMenu(): Promise<Menu[]> {
+    return this.menuRepo.find();
+  }
 }
