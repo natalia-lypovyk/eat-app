@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  eat-db:
+    image: mongo:bionic
+    container_name: eat-db
+    ports:
+      - 3001:3001
+    expose:
+      - 3001
+    volumes:
+      - ./data/eat-db:/usr/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=adminpass
+      - MONGO_INITDB_DATABASE=eat-db
+    command: mongod --port 3001
