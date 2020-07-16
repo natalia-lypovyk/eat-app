@@ -1,7 +1,7 @@
 import { Entity, Column, ObjectIdColumn } from 'typeorm';
 
 @Entity()
-export class Menu {
+export class Reservation {
   @ObjectIdColumn()
   public _id?: string;
 
@@ -9,11 +9,11 @@ export class Menu {
   public id: string;
 
   @Column()
-  public title: string;
+  public guestsQuantity: string;
 
   @Column()
-  public description: string;
+  public orderDate: string;
 
   @Column()
-  public price: string;
+  public orderTime: string;
 }

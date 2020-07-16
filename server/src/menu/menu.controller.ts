@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 
 import { Menu } from '../menu.model';
-import { MenuService } from '../menu/menu.service';
+import { MenuService } from './menu.service';
 
 @Controller('/menu')
 export class MenuController {
@@ -30,7 +30,7 @@ export class MenuController {
     return this.menuService.removeMenuItem(id);
   }
 
-  @Patch('/update:id')
+  @Patch(':id/update')
   public async updateMenuItem(
     @Param('id') id: string,
     @Body() menu: Menu,

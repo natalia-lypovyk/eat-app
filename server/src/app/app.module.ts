@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { MenuController } from './menu.controller';
+import { MenuController } from '../menu/menu.controller';
+import { ReservationController } from '../reservation/reservation.controller';
 import { MenuModule } from '../menu/menu.module';
+import { ReservationModule } from '../reservation/reservation.module';
 import { ErrorHandlerModule } from '../shared/errorHandler';
 
 @Module({
@@ -22,8 +24,9 @@ import { ErrorHandlerModule } from '../shared/errorHandler';
     }),
     MenuModule,
     ErrorHandlerModule,
+    ReservationModule,
   ],
-  controllers: [MenuController],
+  controllers: [MenuController, ReservationController],
   providers: [],
 })
 export class AppModule {}
