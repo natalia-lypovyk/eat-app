@@ -1,6 +1,6 @@
 import { Entity, Column, ObjectIdColumn } from 'typeorm';
 import { Exclude } from 'class-transformer';
-import { IsString } from 'class-validator';
+import { IsNumberString, IsString, MaxLength } from 'class-validator';
 
 @Entity()
 export class Reservation {
@@ -13,7 +13,10 @@ export class Reservation {
   public id: string;
 
   @Column()
-  @IsString()
+  @IsNumberString()
+  @MaxLength(1, {
+    message: 'Too  much guests! You can order a table up to 10 persons',
+  })
   public guestsQuantity: string;
 
   @Column()

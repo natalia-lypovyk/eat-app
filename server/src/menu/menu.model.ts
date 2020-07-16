@@ -1,6 +1,6 @@
 import { Entity, Column, ObjectIdColumn } from 'typeorm';
 import { Exclude } from 'class-transformer';
-import { Contains, IsString } from 'class-validator';
+import { Contains, IsString, MinLength } from 'class-validator';
 
 @Entity()
 export class Menu {
@@ -18,6 +18,9 @@ export class Menu {
 
   @Column()
   @IsString()
+  @MinLength(30, {
+    message: 'Description is too short',
+  })
   public description: string;
 
   @Column()
