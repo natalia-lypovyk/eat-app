@@ -1,4 +1,5 @@
-import { Module } from '@nestjs/common';
+import { ClassSerializerInterceptor, Module } from '@nestjs/common';
+import { APP_INTERCEPTOR } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { MenuController } from '../menu/menu.controller';
@@ -27,6 +28,11 @@ import { ErrorHandlerModule } from '../shared/errorHandler';
     ReservationModule,
   ],
   controllers: [MenuController, ReservationController],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: ClassSerializerInterceptor,
+    },
+  ],
 })
 export class AppModule {}
