@@ -3,16 +3,18 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { MongoRepository } from 'typeorm';
 
 import { Menu } from '../menu.model';
+import { ErrorHandlerService } from '../shared/errorHandler';
 
 @Injectable()
 export class MenuService {
   public constructor(
     @InjectRepository(Menu)
     private menuRepo: MongoRepository<Menu>,
+    private handler: ErrorHandlerService,
   ) {}
 
-  public async addMenu(menu: Menu) {
-    await this.menuRepo.save(menu);
+  public async addMenu(menu: Menu): Promise<Menu | Menu[]> {
+    return this.menuRepo.save(menu);
   }
 
   public async getAllMenu(): Promise<Menu[]> {
@@ -20,15 +22,19 @@ export class MenuService {
   }
 
   public async removeMenuItem(id: string): Promise<Menu> {
-    const itemToRemove = await this.findOneById(id);
+    return this.handler.handleUndefinedValue(async () => {
+      const itemToRemove = await this.findOneById(id);
 
-    return this.menuRepo.remove(itemToRemove);
+      return this.menuRepo.remove(itemToRemove);
+    }, `No item with id ${id} was found`);
   }
 
   public async updateMenuItem(id: string, menu: Menu): Promise<Menu> {
-    const prevMenu = await this.findOneById(id);
+    return this.handler.handleUndefinedValue(async () => {
+      const previousMenu = await this.findOneById(id);
 
-    return this.menuRepo.save({ ...prevMenu, ...menu });
+      return this.menuRepo.save({ ...previousMenu, ...menu });
+    }, `No item with id ${id} was found`);
   }
 
   private async findOneById(id: string): Promise<Menu> {

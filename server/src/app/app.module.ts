@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { MenuController } from './menu.controller';
 import { MenuModule } from '../menu/menu.module';
+import { ErrorHandlerModule } from '../shared/errorHandler';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { MenuModule } from '../menu/menu.module';
       useNewUrlParser: true,
     }),
     MenuModule,
+    ErrorHandlerModule,
   ],
   controllers: [MenuController],
   providers: [],

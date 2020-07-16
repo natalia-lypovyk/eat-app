@@ -16,17 +16,17 @@ export class MenuController {
   public constructor(private readonly menuService: MenuService) {}
 
   @Post('/add')
-  public async addMenu(@Body() menu: Menu) {
-    await this.menuService.addMenu(menu);
+  public async addMenu(@Body() menu: Menu): Promise<Menu | Menu[]> {
+    return this.menuService.addMenu(menu);
   }
 
   @Get('/get')
-  public async getAllMenu() {
+  public async getAllMenu(): Promise<Menu[]> {
     return this.menuService.getAllMenu();
   }
 
-  @Delete('/delete:id')
-  public async removeMenuItem(@Param('id') id: string): Promise<any> {
+  @Delete(':id/delete')
+  public async removeMenuItem(@Param('id') id: string): Promise<Menu> {
     return this.menuService.removeMenuItem(id);
   }
 
@@ -34,7 +34,7 @@ export class MenuController {
   public async updateMenuItem(
     @Param('id') id: string,
     @Body() menu: Menu,
-  ): Promise<any> {
+  ): Promise<Menu> {
     return this.menuService.updateMenuItem(id, menu);
   }
 }
