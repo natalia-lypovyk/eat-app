@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { AppController } from './app.controller';
+import { MenuController } from './menu.controller';
 import { MenuModule } from '../menu/menu.module';
 
 @Module({
@@ -21,7 +21,7 @@ import { MenuModule } from '../menu/menu.module';
     }),
     MenuModule,
   ],
-  controllers: [AppController],
+  controllers: [MenuController],
   providers: [],
 })
 export class AppModule {}

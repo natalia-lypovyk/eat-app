@@ -6,6 +6,9 @@ export class Menu {
   public _id?: string;
 
   @Column()
+  public id: string;
+
+  @Column()
   public title: string;
 
   @Column()
