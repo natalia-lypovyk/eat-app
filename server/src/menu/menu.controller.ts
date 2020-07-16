@@ -8,7 +8,7 @@ import {
   Patch,
 } from '@nestjs/common';
 
-import { Menu } from '../menu.model';
+import { Menu } from './menu.model';
 import { MenuService } from './menu.service';
 
 @Controller('/menu')

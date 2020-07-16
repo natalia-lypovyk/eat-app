@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { MongoRepository } from 'typeorm';
 
-import { Menu } from '../menu.model';
+import { Menu } from './menu.model';
 import { ErrorHandlerService } from '../shared/errorHandler';
 
 @Injectable()
